@@ -35,6 +35,8 @@ namespace GrabPie
 
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+
             services.AddControllersWithViews();
             services.AddMvc();
         }
@@ -48,6 +50,7 @@ namespace GrabPie
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
@@ -55,7 +58,7 @@ namespace GrabPie
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Pie}/{action=List}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
