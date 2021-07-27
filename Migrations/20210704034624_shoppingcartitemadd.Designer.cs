@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrabPie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210627042206_shoppingCartAdded")]
-    partial class shoppingCartAdded
+    [Migration("20210704034624_shoppingcartitemadd")]
+    partial class shoppingcartitemadd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -276,7 +276,7 @@ namespace GrabPie.Migrations
 
                     b.HasIndex("PieId");
 
-                    b.ToTable("ShoppingCartItmes");
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("GrabPie.Models.Pie", b =>

@@ -274,7 +274,7 @@ namespace GrabPie.Migrations
 
                     b.HasIndex("PieId");
 
-                    b.ToTable("ShoppingCartItmes");
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("GrabPie.Models.Pie", b =>

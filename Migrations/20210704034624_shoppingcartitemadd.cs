@@ -2,7 +2,7 @@
 
 namespace GrabPie.Migrations
 {
-    public partial class shoppingCartAdded : Migration
+    public partial class shoppingcartitemadd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,7 +49,7 @@ namespace GrabPie.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ShoppingCartItmes",
+                name: "ShoppingCartItems",
                 columns: table => new
                 {
                     ShoppingCartItemId = table.Column<int>(type: "int", nullable: false)
@@ -60,9 +60,9 @@ namespace GrabPie.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingCartItmes", x => x.ShoppingCartItemId);
+                    table.PrimaryKey("PK_ShoppingCartItems", x => x.ShoppingCartItemId);
                     table.ForeignKey(
-                        name: "FK_ShoppingCartItmes_Pies_PieId",
+                        name: "FK_ShoppingCartItems_Pies_PieId",
                         column: x => x.PieId,
                         principalTable: "Pies",
                         principalColumn: "PieId",
@@ -108,15 +108,15 @@ namespace GrabPie.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingCartItmes_PieId",
-                table: "ShoppingCartItmes",
+                name: "IX_ShoppingCartItems_PieId",
+                table: "ShoppingCartItems",
                 column: "PieId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ShoppingCartItmes");
+                name: "ShoppingCartItems");
 
             migrationBuilder.DropTable(
                 name: "Pies");
