@@ -19,7 +19,7 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.x'
+        dotnet-version: '3.1.301'
         include-prerelease: true
 
     - name: Build with dotnet
@@ -38,7 +38,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'development'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -52,6 +52,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'grabpie'
-        slot-name: 'development'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d9c744decbf54956bf1f89a03fdfe4cf }}
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9ae015a14f324181ac2963e73155932a }}
         package: .
