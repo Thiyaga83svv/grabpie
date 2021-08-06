@@ -53,5 +53,5 @@ jobs:
       with:
         app-name: 'grabpie'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9ae015a14f324181ac2963e73155932a }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c325be4f20dc4577aacbcbf1fa4916ee }}
         package: .
