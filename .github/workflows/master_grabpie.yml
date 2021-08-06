@@ -38,7 +38,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'development'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -52,6 +52,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'grabpie'
-        slot-name: 'development'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c325be4f20dc4577aacbcbf1fa4916ee }}
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c3aafe26726c43c9bafe9f0109c396c3 }}
         package: .
