@@ -2,7 +2,7 @@
 
 namespace GrabPie.Migrations
 {
-    public partial class shoppingcartitemadd : Migration
+    public partial class firstmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

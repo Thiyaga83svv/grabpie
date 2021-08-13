@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrabPie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210704034624_shoppingcartitemadd")]
-    partial class shoppingcartitemadd
+    [Migration("20210813042640_first-migration")]
+    partial class firstmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
